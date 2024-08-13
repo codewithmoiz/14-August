@@ -1,0 +1,330 @@
+@font-face {
+    font-family: Bulleto;
+    src: url(./Font/Bulletto\ Killa.ttf);
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html,body{
+    width: 100%;
+    height: 100%;
+}
+:root{
+    --font: bulleto;
+    --green-color: #05431a;
+    --light-color: rgb(243, 243, 243);
+}
+
+/* Loader */
+#loader{
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    z-index: 9999999;
+}
+#loader .top{
+    width: 100%;
+    height: 50%;
+    /* border: 1px solid red; */
+    background-color: var(--green-color);
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    overflow: hidden;
+}
+.top h1{
+    color: goldenrod;
+    font-family: Bulleto;
+    font-weight: 400;
+    font-size: 50px;
+    transform: translateY(50%);
+}
+#loader .bottom{
+    width: 100%;
+    height: 50%;
+    /* border: 1px solid yellow; */
+    background-color: var(--green-color);
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    overflow: hidden;
+}
+.bottom h1{
+    color: goldenrod;
+    font-family: Bulleto;
+    font-weight: 400;
+    font-size: 50px;
+    transform: translateY(-50%);
+}
+
+@media (max-width: 500px) {
+    #loader h1{
+        font-size: 9vw;
+    }
+}
+
+#main{
+    width: 100%;
+}
+
+/* Hero Section */
+#main .hero{
+    height: 100vh;
+    width: 100%;
+    background-color: var(--light-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.hero .center-hero{
+    height: 80%;
+    width: 65%;
+    /* background-color: red; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.center-hero .txt{
+    position: relative;
+    overflow: hidden;
+}
+.center-hero .txt h1 span{
+    display: inline-block;
+}
+.center-hero .txt h1{
+    font-family: var(--font);
+    font-size: 135px;
+    text-align: center;
+    color: transparent;
+    -webkit-text-stroke: 1px #111;
+    line-height: 135px;
+}
+.center-hero .txt-2 h1{
+    -webkit-text-stroke: 1px currentColor;
+    color: var(--green-color);
+}
+.center-hero .txt-2 img{
+    position: absolute;
+    bottom: -120px;
+    left: 400px;
+    transform: rotate(-20deg);
+    width: 250px;
+    z-index: 5 !important;
+}
+.center-hero .txt-3{
+    z-index: 999 !important;
+}
+
+@media (max-width: 500px) {
+    .hero .center-hero{
+        height: 100%;
+        width: 100%;
+    }
+    .center-hero .txt h1{
+        font-size: 75px;
+        line-height: 75px;
+    }
+    .center-hero .txt-2 img{
+        position: absolute;
+        bottom: -95px;
+        left: 50%;
+        transform: rotate(-20deg);
+        width: 175px;
+        z-index: 5 !important;
+    }
+}
+@media (max-width: 402px) {
+    .center-hero .txt h1{
+        font-size: 15vw;
+        line-height: 15vw;
+    }
+    .center-hero .txt-2 img{
+        position: absolute;
+        bottom: -95px;
+        left: 50%;
+        transform: rotate(-20deg);
+        width: 40vw;
+        z-index: 5 !important;
+    }
+}
+
+/* Marquee Section */
+/* .marq{
+    height: 50vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: red;
+}
+.move{
+    display: flex;
+    align-items: center; 
+    gap: 100px; 
+    overflow: hidden; 
+}
+.marquee{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    gap: 50px;
+    transform: translateX(-100%);
+}
+.marquee h1{
+    font-size: 70px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.marquee img{
+    height: 60px;
+} */
+
+/* Images Hover Section */
+.imgs-hover{
+    width: 100%;
+    height: 110vh;
+    background: var(--green-color);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0 20px;
+}
+.imgs-hover>h1{
+    color: goldenrod;
+    border-bottom: 2px solid #fff;
+    font-size: 80px;
+    font-weight: 400;
+    font-family: Bulleto;
+}
+
+.elem{
+    position: relative;
+    height: 120px;
+    width: 100%;
+    /* background-color: red; */
+    /* border-bottom: 2px solid #fff; */
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.elem img{
+    height: 250px;
+    width: 200px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 20px;
+    position: absolute;
+    /* transform: translate(-50%, -50%); */
+    opacity: 0;
+    transition: all linear 0.3s; 
+}
+
+.elem h1{
+    font-size: 70px;
+    position: relative;
+    z-index: 9;
+    color: #fff;
+    font-family: cursive;
+    /* font-weight: 400; */
+    /* mix-blend-mode: difference; */
+}
+@media (max-width: 500px) {
+    .imgs-hover>h1{
+        font-size: 40px;
+        line-height: 45px;
+        text-align: center;
+    }
+    .elem{
+        height: 90px;
+    }
+    .elem img{
+        height: 150px;
+        width: 125px;
+    }
+    .elem h1{
+        font-size: 35px;
+    }
+}
+@media (max-width: 392px) {
+    .imgs-hover>h1{
+        font-size: 11vw;
+        line-height: 11.5vw;
+        text-align: center;
+    }
+    .elem{
+        height: 75px;
+    }
+    .elem img{
+        height: 150px;
+        width: 125px;
+    }
+    .elem h1{
+        font-size: 8vw;
+        line-height: 8.5vw;
+    }
+}
+
+/* Canvas Part */
+#main .parent-canvas{
+    width: 100%;
+    height: 700vh;
+    background-color: var(--green-color);
+    position: relative;
+    top: 0;
+    left: 0;
+}
+.parent-canvas .child-canvas{
+    height: 100vh;
+    width: 100%;
+    /* background-color: crimson; */
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 5;
+}
+
+.child-canvas canvas#frame{
+    width: 100%;
+    height: 100%;
+}
+/* Canvas Part Ended... */
+
+/* Wish Section */
+.wish{
+    width: 100%;
+    height: 100vh;
+    background: var(--green-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.wish p{
+    font-size: 50px;
+    /* font-weight: 400; */
+    font-family: cursive;
+    color: #fff;
+    text-align: center;
+    width: 70%;
+}
+.wish p span{
+    opacity: 0.3;
+}
+
+@media (max-width: 500px) {
+    .wish{
+        height: 80vh;
+    }
+    .wish p{
+        font-size: 6vw;
+        width: 98%;
+    } 
+}
